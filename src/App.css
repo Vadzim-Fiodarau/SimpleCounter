@@ -1,71 +1,85 @@
 
-
 .App {
-  width: 100vmax;
-  height: 100vmin;
-  position: relative;
-  background-color: #343434;
-  text-align: center;
+    width: 100vmax;
+    height: 100vmin;
+    position: relative;
+    background-color: #343434;
+    text-align: center;
 
 }
 
-.wrapper-counter{
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  border: solid 2px aquamarine;
-  border-radius: 10px;
-  display: grid;
-  text-align: center;
+.wrapper-counter {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border: solid 2px aquamarine;
+    border-radius: 10px;
+    display: grid;
+    text-align: center;
 
 }
 
 
 .counter {
-  margin: 10px;
-  border: solid 1px aquamarine;
-  border-radius: 10px;
-  background-color: aquamarine;
-  text-align: center;
+    margin: 10px;
+    border: solid 1px aquamarine;
+    border-radius: 10px;
+    background-color: aquamarine;
+    text-align: center;
 }
 
 
 .wrapper-inc-res {
-  border: solid 2px aquamarine;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  margin: 10px;
+    border: solid 2px aquamarine;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
 }
 
 .wrap-button-inc {
-  padding: 15px;
+    padding: 15px;
 }
+
 .wrap-button-res {
-  padding: 15px;
+    padding: 15px;
 }
 
-.button-inc{
-  font-size: x-large;
-  border-radius: 5px;
-  background-color: aquamarine;
-  cursor: pointer;
+.button-inc {
+    font-size: x-large;
+    border-radius: 5px;
+    background-color: aquamarine;
+    cursor: pointer;
 }
 
-.button-res{
-  font-size: x-large;
-  border-radius: 5px;
-  background-color: aquamarine;
-  cursor: pointer;
+.button-res {
+    font-size: x-large;
+    border-radius: 5px;
+    background-color: aquamarine;
+    cursor: pointer;
 
 }
 
 
 .red {
-  color: red;
+    color: red;
+}
+
+.inputError {
+    background-color: salmon;
+    opacity: 0.5;
+}
+
+.incorrect-value {
+    color: salmon;
+}
+
+.error{
+    color:red;
+    font-size: 20px;
 }
