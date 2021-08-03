@@ -33,6 +33,13 @@
     text-align: center;
 }
 
+.counter_enter {
+    color: aquamarine;
+    font-size: 20px;
+    background-color: #343434;
+}
+
+
 
 .wrapper-inc-res {
     border: solid 2px aquamarine;

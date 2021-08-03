@@ -1,5 +1,5 @@
 import React from "react";
-import {Simulate} from "react-dom/test-utils";
+
 
 
 
@@ -16,12 +16,13 @@ type CounterPropsType = {
 function Counter(props: CounterPropsType) {
 
     const classes = props.counter >= 0 ? true : undefined
-    const inccoret = props.maxValue < 0 || props.startValue < 0 ?  <div className={'error'}>Incorect value </div>: props.counter
+    const enterNewValue = props.counter
+    const incorrect = props.maxValue < 0 || props.startValue < 0 || props.maxValue <= props.startValue ?  <div className={'error'}>Incorrect value </div>: enterNewValue
 
     return (
         <div className={'wrapper-counter'}>
             <div className={'counter'}>
-                <div className={props.counter === props.maxValue ? 'red' : ''}><h1>{inccoret}</h1></div>
+                <div className={props.counter === props.maxValue ? 'red' : ''}><h1>{incorrect}</h1></div>
             </div>
             <div className={'wrapper-inc-res'}>
                 <div className={'wrap-button-inc'}>

@@ -6,6 +6,7 @@ type PropsType = {
     setNewValueHandler: () => void
     maxValue: number
     startValue: number
+    counter:number
 }
 
 export const SetCounterValue: React.FC<PropsType> = ({
@@ -13,10 +14,11 @@ export const SetCounterValue: React.FC<PropsType> = ({
                                                          OnChangeStartValueHandler,
                                                          setNewValueHandler,
                                                          maxValue,
-                                                         startValue
+                                                         startValue,
+                                                         counter
                                                      }) => {
 
-
+const incorrectInput = maxValue <= startValue ? 'inputError' : ''
     return (
         <div>
             <div className={'set-counter'}>
@@ -25,7 +27,7 @@ export const SetCounterValue: React.FC<PropsType> = ({
                         <h3>
                             max value
                         </h3>
-                        <input className={maxValue < 0 ? 'inputError' : ''}
+                        <input className={maxValue < 0 || incorrectInput ? 'inputError' : ''}
                                type={'number'}
                                value={maxValue}
                                onChange={OnChangeMaxValueHandler}/>
@@ -34,7 +36,7 @@ export const SetCounterValue: React.FC<PropsType> = ({
                         <h3>
                             start value
                         </h3>
-                        <input className={startValue < 0 ? 'inputError' : ''}
+                        <input className={startValue < 0 || incorrectInput ? 'inputError' : ''}
                                type={'number'}
                                value={startValue}
                                onChange={OnChangeStartValueHandler}/>
@@ -44,7 +46,10 @@ export const SetCounterValue: React.FC<PropsType> = ({
             <div className={'set-wrapper'}>
                 <div className={'wrap-button-set'}>
                     <button className={'button-set'}
-                            disabled={  maxValue < 0 || startValue < 0 ? true: undefined}
+                            disabled={  maxValue < 0 || startValue < 0 ||
+                            startValue === counter || maxValue === counter ||
+                            maxValue <= startValue
+                                ? true: undefined}
                             onClick={setNewValueHandler}>
                         set
                     </button>

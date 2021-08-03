@@ -9,7 +9,7 @@ function App() {
     let [counter, setCounter] = useState<any>(0)
     let [maxValue, setMaxValue] = useState(0)
     let [startValue, setStartValue] = useState(0)
-    let [error, setError] = useState(0)
+    let [error, setError] = useState('enter')
 
     useEffect(() => {
         const currentMaxValueStorage = localStorage.getItem('currentMaxValue')
@@ -40,11 +40,11 @@ function App() {
 
     const OnChangeMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setMaxValue(JSON.parse(e.currentTarget.value))
-
+        setError(error)
     }
     const OnChangeStartValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setStartValue(JSON.parse(e.currentTarget.value))
-
+        setError(error)
     }
 
     const setNewValueHandler = () => {
@@ -69,6 +69,7 @@ function App() {
                              setNewValueHandler={setNewValueHandler}
                              maxValue={maxValue}
                              startValue={startValue}
+                             counter={counter}
             />
         </div>
     );
