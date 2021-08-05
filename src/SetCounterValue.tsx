@@ -6,7 +6,7 @@ type PropsType = {
     setNewValueHandler: () => void
     maxValue: number
     startValue: number
-    counter:number
+    counter:number | string
 }
 
 export const SetCounterValue: React.FC<PropsType> = ({
@@ -19,28 +19,28 @@ export const SetCounterValue: React.FC<PropsType> = ({
                                                      }) => {
 
 const incorrectInput = maxValue <= startValue ? 'inputError' : ''
+
     return (
-        <div>
+        <div className={'set-wrapper-counter'}>
             <div className={'set-counter'}>
                 <div className={'set-input'}>
-                    <div>
-                        <h3>
-                            max value
+                        <h3>max value:
+                            <input className={maxValue < 0 || incorrectInput ? 'inputError' : 'border'}
+                                   type={'number'}
+                                   value={maxValue}
+                                   onChange={OnChangeMaxValueHandler}/>
                         </h3>
-                        <input className={maxValue < 0 || incorrectInput ? 'inputError' : ''}
-                               type={'number'}
-                               value={maxValue}
-                               onChange={OnChangeMaxValueHandler}/>
-                    </div>
-                    <div>
-                        <h3>
-                            start value
+
+
+                        <h3>start value:
+                            <input className={startValue < 0 || incorrectInput ? 'inputError' : 'border'}
+                                   type={'number'}
+                                   value={startValue}
+                                   onChange={OnChangeStartValueHandler}
+                            />
                         </h3>
-                        <input className={startValue < 0 || incorrectInput ? 'inputError' : ''}
-                               type={'number'}
-                               value={startValue}
-                               onChange={OnChangeStartValueHandler}/>
-                    </div>
+
+
                 </div>
             </div>
             <div className={'set-wrapper'}>

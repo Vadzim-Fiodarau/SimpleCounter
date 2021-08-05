@@ -7,7 +7,7 @@ import React from "react";
 type CounterPropsType = {
     counterIncrement: () => void
     resetCounter: () => void
-    counter: number
+    counter: number | string
     maxValue:number
     startValue: number
 }

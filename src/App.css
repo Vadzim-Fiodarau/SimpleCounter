@@ -2,16 +2,18 @@
 .App {
     width: 100vmax;
     height: 100vmin;
-    position: relative;
+    position: absolute;
     background-color: #343434;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
 
 }
 
 .wrapper-counter {
-    width: 200px;
-    height: 200px;
-    position: absolute;
+    width: 350px;
+    height: 250px;
+    position: relative;
     top: 0;
     right: 0;
     bottom: 0;
@@ -19,17 +21,21 @@
     margin: auto;
     border: solid 2px aquamarine;
     border-radius: 10px;
-    display: grid;
     text-align: center;
-
 }
 
+.border {
+    border: aquamarine solid 3px;
+}
 
 .counter {
+    width: 325px;
+    height: 130px;
+    color: aquamarine;
     margin: 10px;
     border: solid 1px aquamarine;
     border-radius: 10px;
-    background-color: aquamarine;
+    background-color: #343434;
     text-align: center;
 }
 
@@ -40,8 +46,9 @@
 }
 
 
-
 .wrapper-inc-res {
+    width: 325px;
+    height: 80px;
     border: solid 2px aquamarine;
     border-radius: 10px;
     display: flex;
@@ -72,6 +79,62 @@
 
 }
 
+.set-wrapper-counter {
+    width: 350px;
+    height: 250px;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border: solid 2px aquamarine;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.set-counter {
+    margin: 10px;
+    border: solid 1px aquamarine;
+    border-radius: 10px;
+    background-color: #343434;
+    text-align: center;
+    color: aquamarine;
+}
+
+.set-input {
+    color: aquamarine;
+    font-size: 20px;
+    background-color: #343434;
+    margin: 0;
+}
+
+.set-wrapper {
+    width: 325px;
+    height: 80px;
+    border: solid 2px aquamarine;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    position: relative;
+}
+
+.wrap-button-set {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.button-set {
+    width: 60px;
+    height: 40px;
+    font-size: x-large;
+    border-radius: 5px;
+    background-color: aquamarine;
+    cursor: pointer;
+}
 
 .red {
     color: red;
@@ -86,7 +149,7 @@
     color: salmon;
 }
 
-.error{
-    color:red;
+.error {
+    color: red;
     font-size: 20px;
 }

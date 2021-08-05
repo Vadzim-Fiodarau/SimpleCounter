@@ -6,7 +6,7 @@ import {SetCounterValue} from "./SetCounterValue";
 
 function App() {
 
-    let [counter, setCounter] = useState<any>(0)
+    let [counter, setCounter] = useState(0)
     let [maxValue, setMaxValue] = useState(0)
     let [startValue, setStartValue] = useState(0)
     let [error, setError] = useState('enter')
@@ -48,6 +48,7 @@ function App() {
     }
 
     const setNewValueHandler = () => {
+        setCounter(maxValue)
         setCounter(startValue)
 
     }
@@ -57,19 +58,20 @@ function App() {
 
     return (
         <div className="App">
-            <Counter counterIncrement={counterIncrement}
-                     resetCounter={resetCounter}
-                     counter={counter}
-                     maxValue={maxValue}
-                     startValue={startValue}
 
-            />
             <SetCounterValue OnChangeMaxValueHandler={OnChangeMaxValueHandler}
                              OnChangeStartValueHandler={OnChangeStartValueHandler}
                              setNewValueHandler={setNewValueHandler}
                              maxValue={maxValue}
                              startValue={startValue}
                              counter={counter}
+            />
+            <Counter counterIncrement={counterIncrement}
+                     resetCounter={resetCounter}
+                     counter={counter}
+                     maxValue={maxValue}
+                     startValue={startValue}
+
             />
         </div>
     );
