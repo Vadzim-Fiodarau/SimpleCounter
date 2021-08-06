@@ -6,10 +6,10 @@ import {SetCounterValue} from "./SetCounterValue";
 
 function App() {
 
-    let [counter, setCounter] = useState(0)
+    let [counter, setCounter] = useState<any>(0)
     let [maxValue, setMaxValue] = useState(0)
     let [startValue, setStartValue] = useState(0)
-    let [error, setError] = useState('enter')
+
 
     useEffect(() => {
         const currentMaxValueStorage = localStorage.getItem('currentMaxValue')
@@ -39,12 +39,17 @@ function App() {
     const resetCounter = () => setCounter(startValue)
 
     const OnChangeMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        if(e.currentTarget.value >= JSON.stringify(0)){
+            setCounter("enter values and press 'set'")
+        }
         setMaxValue(JSON.parse(e.currentTarget.value))
-        setError(error)
+
     }
     const OnChangeStartValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setStartValue(JSON.parse(e.currentTarget.value))
-        setError(error)
+        if(e.currentTarget.value >= JSON.stringify(0)){
+            setCounter("enter values and press 'set'")
+        }
+            setStartValue(JSON.parse(e.currentTarget.value))
     }
 
     const setNewValueHandler = () => {

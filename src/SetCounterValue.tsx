@@ -46,9 +46,9 @@ const incorrectInput = maxValue <= startValue ? 'inputError' : ''
             <div className={'set-wrapper'}>
                 <div className={'wrap-button-set'}>
                     <button className={'button-set'}
-                            disabled={  maxValue < 0 || startValue < 0 ||
-                            startValue === counter || maxValue === counter ||
-                            maxValue <= startValue
+                            disabled={ maxValue < 0 || startValue < 0 ||
+                            startValue >= counter || maxValue <= counter ||
+                            maxValue <= startValue || counter > startValue
                                 ? true: undefined}
                             onClick={setNewValueHandler}>
                         set

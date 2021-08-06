@@ -27,13 +27,16 @@ function Counter(props: CounterPropsType) {
             <div className={'wrapper-inc-res'}>
                 <div className={'wrap-button-inc'}>
                     <button className={'button-inc'}
-                            disabled={props.counter === props.maxValue || props.maxValue <0  || props.startValue <0 ? true : undefined}
+                            disabled={props.counter === props.maxValue
+                            || props.maxValue <0  || props.startValue <0
+                            || props.startValue === props.maxValue
+                            || props.startValue === props.maxValue ? true : undefined}
                             onClick={props.counterIncrement}>inc
                     </button>
                 </div>
                 <div className={'wrap-button-res'}>
-                    <button className={classes ? 'button-res' : ''}
-                            disabled={props.counter === 0 ? true : undefined}
+                    <button className={classes ? 'button-res' : 'button-res'}
+                            disabled={props.counter === 0  ? true : undefined}
                             onClick={props.resetCounter}>reset
                     </button>
                 </div>
